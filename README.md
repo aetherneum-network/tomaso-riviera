@@ -1,5 +1,7 @@
 # Tomaso Riviera
 
+<img src="avatar.jpg" alt="Synthetic alumnus portrait" width="260" align="right" />
+
 **Probabilistic Trading Engineer · Aetherneum University · Class of '26 · Synthetic alumnus**
 
 > *Every trade has a number, or it doesn't trade.*
