@@ -1,0 +1,769 @@
+{
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "code_sha256": "e9eec874c310e5b17ffdc5b1bc3e26a9974231ffb237e74f1a7e99f05247f407",
+  "fifth_world_sha256": "ef8dea496575dfc3b9275b011449c723e34e340cea8fa5e0cd4a5c8d4c2bb2eb",
+  "generator_version": "2.0.0",
+  "hand_candidates": {
+    "agree_with_the_hand": 30,
+    "count": 30,
+    "ledger_head": "96a53efa20c0f5f7c74320d80fbdc1786d7af06fef56b20ebd674ce81cdfbce6",
+    "limit_violations": 0,
+    "reference_mismatches": 0,
+    "verdicts": [
+      {
+        "agree": true,
+        "candidate_id": "EV-01",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 50000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 50000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-02",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "EDGE_NOT_ABOVE_THRESHOLD"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "EDGE_NOT_ABOVE_THRESHOLD",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-03",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 10204
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 10204
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-04",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 15000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 15000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-05",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 50000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 50000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-06",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 15000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 15000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-07",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 15000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 15000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-08",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-09",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-10",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-11",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "NO_QUORUM"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "NO_QUORUM",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-12",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 15000
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 15000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-13",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-14",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-15",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "MISSING_COST"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "MISSING_COST",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-16",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "MISSING_CONFIDENCE"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "MISSING_CONFIDENCE",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-17",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 22500
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 22500
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-18",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "COST_OUT_OF_MODEL"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "COST_OUT_OF_MODEL",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-19",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_POSITION_ALREADY_OPEN"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_POSITION_ALREADY_OPEN",
+          "stake_units": 15000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-20",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_POSITION_ALREADY_OPEN"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_POSITION_ALREADY_OPEN",
+          "stake_units": 50000
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-30",
+        "expected": {
+          "decision": "REJECTED"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "VALIDATOR_VETO",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-21",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "CANDIDATE_AFTER_OUTCOME"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "CANDIDATE_AFTER_OUTCOME",
+          "stake_units": null
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-22",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 35625
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-23",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 35625
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-24",
+        "expected": {
+          "decision": "EXECUTED",
+          "stake_units": 35625
+        },
+        "got": {
+          "decision": "EXECUTED",
+          "reason": "EDGE_ABOVE_THRESHOLD",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-25",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-26",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-27",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-28",
+        "expected": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "RISK_PORTFOLIO_EXPOSURE",
+          "stake_units": 35625
+        }
+      },
+      {
+        "agree": true,
+        "candidate_id": "EV-29",
+        "expected": {
+          "decision": "REJECTED"
+        },
+        "got": {
+          "decision": "REJECTED",
+          "reason": "CANDIDATE_AFTER_OUTCOME",
+          "stake_units": null
+        }
+      }
+    ]
+  },
+  "hand_candidates_sha256": "3a230b3f83e45ae647ac228e0506e24f30063d795e65719cac4e2296325731d0",
+  "harness_version": "2.0.0",
+  "headline": {
+    "decisions_agree": 24931,
+    "decisions_total": 24931,
+    "ledger_rows": 51894,
+    "ledgers_chain_ok": true,
+    "limit_violations": 0,
+    "max_size_deviation_units": 0,
+    "other_mismatches": 0
+  },
+  "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+  "runner": "evaluator (Claude Opus 5.5), not the builder",
+  "seed": 20261011,
+  "stress": false,
+  "suite": "blind",
+  "worlds": [
+    {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "calibration": {
+        "expected_wins_milli": 154160,
+        "mean_true_net_edge_ppm": -11146,
+        "settled_trades": 304,
+        "sum_true_probability_ppm": 154160000,
+        "trades_with_true_net_edge_above_threshold": 0,
+        "wins": 166,
+        "z_milli": 1417
+      },
+      "decisions": {
+        "agree": 4940,
+        "first_mismatches": [],
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0,
+        "total": 4940
+      },
+      "detector": {
+        "armed": true,
+        "baseline_matches_backtest": true,
+        "baseline_trades": 61,
+        "unarmed_reason": null,
+        "windows_checked": 4
+      },
+      "ledger": {
+        "backtest_chain_ok": true,
+        "backtest_rows": 2258,
+        "chain_ok": true,
+        "head": "a2a5e67580e7ce1ce757e0519d5de09070ae556a11f21d19b954c42267612167",
+        "rows": 8029
+      },
+      "limit_violations": 0,
+      "regime": null,
+      "replay": {
+        "candidates": 3856,
+        "executed": 243,
+        "halts": [],
+        "max_drawdown_ppm": 120251,
+        "pauses": [],
+        "rejected": {
+          "EDGE_NOT_ABOVE_THRESHOLD": 2550,
+          "MISSING_CONFIDENCE": 37,
+          "MISSING_COST": 34,
+          "RISK_POSITION_ALREADY_OPEN": 194,
+          "VALIDATOR_VETO": 798
+        }
+      },
+      "seed": 20261011,
+      "signal_vs_truth": {
+        "estimated_fail_true_fail": 4148,
+        "estimated_fail_true_pass": 0,
+        "estimated_pass_true_fail": 698,
+        "estimated_pass_true_pass": 0,
+        "incomplete": 94
+      },
+      "simulated_result": {
+        "caption": "synthetic world with planted edge; not a performance",
+        "delta_units": 103774,
+        "final_equity_units": 1103774,
+        "initial_units": 1000000
+      },
+      "stress": false,
+      "violations": [],
+      "world": "null"
+    },
+    {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "calibration": {
+        "expected_wins_milli": 209528,
+        "mean_true_net_edge_ppm": 71359,
+        "settled_trades": 399,
+        "sum_true_probability_ppm": 209528000,
+        "trades_with_true_net_edge_above_threshold": 399,
+        "wins": 219,
+        "z_milli": 980
+      },
+      "decisions": {
+        "agree": 4992,
+        "first_mismatches": [],
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0,
+        "total": 4992
+      },
+      "detector": {
+        "armed": true,
+        "baseline_matches_backtest": true,
+        "baseline_trades": 104,
+        "unarmed_reason": null,
+        "windows_checked": 5
+      },
+      "ledger": {
+        "backtest_chain_ok": true,
+        "backtest_rows": 2755,
+        "chain_ok": true,
+        "head": "bee132f9d96c5225f19c5ad022c19681825ccc523637f0ce34a1225936fbaf51",
+        "rows": 7637
+      },
+      "limit_violations": 0,
+      "regime": null,
+      "replay": {
+        "candidates": 3667,
+        "executed": 295,
+        "halts": [],
+        "max_drawdown_ppm": 93877,
+        "pauses": [],
+        "rejected": {
+          "EDGE_NOT_ABOVE_THRESHOLD": 694,
+          "MISSING_CONFIDENCE": 32,
+          "MISSING_COST": 41,
+          "RISK_POSITION_ALREADY_OPEN": 2241,
+          "VALIDATOR_VETO": 364
+        }
+      },
+      "seed": 20261011,
+      "signal_vs_truth": {
+        "estimated_fail_true_fail": 0,
+        "estimated_fail_true_pass": 1066,
+        "estimated_pass_true_fail": 0,
+        "estimated_pass_true_pass": 3829,
+        "incomplete": 97
+      },
+      "simulated_result": {
+        "caption": "synthetic world with planted edge; not a performance",
+        "delta_units": 702516,
+        "final_equity_units": 1702516,
+        "initial_units": 1000000
+      },
+      "stress": false,
+      "violations": [],
+      "world": "planted_edge"
+    },
+    {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "calibration": {
+        "expected_wins_milli": 162001,
+        "mean_true_net_edge_ppm": 212562,
+        "settled_trades": 201,
+        "sum_true_probability_ppm": 162001000,
+        "trades_with_true_net_edge_above_threshold": 150,
+        "wins": 158,
+        "z_milli": -759
+      },
+      "decisions": {
+        "agree": 4968,
+        "first_mismatches": [],
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0,
+        "total": 4968
+      },
+      "detector": {
+        "armed": true,
+        "baseline_matches_backtest": true,
+        "baseline_trades": 99,
+        "unarmed_reason": null,
+        "windows_checked": 2
+      },
+      "ledger": {
+        "backtest_chain_ok": true,
+        "backtest_rows": 2600,
+        "chain_ok": true,
+        "head": "afe15e1837a25763859f86bb87bdc8cb968d9682cc366d02745406b218a4df5f",
+        "rows": 7742
+      },
+      "limit_violations": 0,
+      "regime": {
+        "change_t": 2400,
+        "delay_steps": 718,
+        "halt_t": null,
+        "pause_t": 3118,
+        "post_change_trades_settled_until_pause": 49,
+        "within_declared_K": true
+      },
+      "replay": {
+        "candidates": 3718,
+        "executed": 102,
+        "halts": [],
+        "max_drawdown_ppm": 170439,
+        "pauses": [
+          3118
+        ],
+        "rejected": {
+          "MISSING_CONFIDENCE": 30,
+          "MISSING_COST": 27,
+          "RISK_POSITION_ALREADY_OPEN": 985,
+          "SIGNAL_PAUSED": 2437,
+          "VALIDATOR_VETO": 137
+        }
+      },
+      "seed": 20261011,
+      "signal_vs_truth": {
+        "estimated_fail_true_fail": 0,
+        "estimated_fail_true_pass": 0,
+        "estimated_pass_true_fail": 3033,
+        "estimated_pass_true_pass": 1855,
+        "incomplete": 80
+      },
+      "simulated_result": {
+        "caption": "synthetic world with planted edge; not a performance",
+        "delta_units": 870691,
+        "final_equity_units": 1870691,
+        "initial_units": 1000000
+      },
+      "stress": false,
+      "violations": [],
+      "world": "regime_change"
+    },
+    {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "calibration": {
+        "expected_wins_milli": 6932,
+        "mean_true_net_edge_ppm": -15764,
+        "settled_trades": 14,
+        "sum_true_probability_ppm": 6932000,
+        "trades_with_true_net_edge_above_threshold": 0,
+        "wins": 6,
+        "z_milli": -516
+      },
+      "decisions": {
+        "agree": 5073,
+        "first_mismatches": [],
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0,
+        "total": 5073
+      },
+      "detector": {
+        "armed": false,
+        "baseline_matches_backtest": true,
+        "baseline_trades": 3,
+        "unarmed_reason": "BASELINE_TOO_SMALL",
+        "windows_checked": 0
+      },
+      "ledger": {
+        "backtest_chain_ok": true,
+        "backtest_rows": 3030,
+        "chain_ok": true,
+        "head": "e83df37cd80783d63d66fc99e818b0cd5473b6836e5a2690b39c40a8781e95c1",
+        "rows": 7519
+      },
+      "limit_violations": 0,
+      "regime": null,
+      "replay": {
+        "candidates": 3616,
+        "executed": 11,
+        "halts": [],
+        "max_drawdown_ppm": 28708,
+        "pauses": [],
+        "rejected": {
+          "EDGE_NOT_ABOVE_THRESHOLD": 3175,
+          "MISSING_CONFIDENCE": 37,
+          "MISSING_COST": 37,
+          "VALIDATOR_VETO": 356
+        }
+      },
+      "seed": 20261011,
+      "signal_vs_truth": {
+        "estimated_fail_true_fail": 4954,
+        "estimated_fail_true_pass": 0,
+        "estimated_pass_true_fail": 14,
+        "estimated_pass_true_pass": 0,
+        "incomplete": 105
+      },
+      "simulated_result": {
+        "caption": "synthetic world with planted edge; not a performance",
+        "delta_units": -10892,
+        "final_equity_units": 989108,
+        "initial_units": 1000000
+      },
+      "stress": false,
+      "violations": [],
+      "world": "high_cost"
+    },
+    {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "calibration": {
+        "expected_wins_milli": 162120,
+        "mean_true_net_edge_ppm": 29299,
+        "settled_trades": 305,
+        "sum_true_probability_ppm": 162120000,
+        "trades_with_true_net_edge_above_threshold": 144,
+        "wins": 162,
+        "z_milli": -14
+      },
+      "decisions": {
+        "agree": 4958,
+        "first_mismatches": [],
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0,
+        "total": 4958
+      },
+      "detector": {
+        "armed": true,
+        "baseline_matches_backtest": true,
+        "baseline_trades": 85,
+        "unarmed_reason": null,
+        "windows_checked": 4
+      },
+      "ledger": {
+        "backtest_chain_ok": true,
+        "backtest_rows": 2210,
+        "chain_ok": true,
+        "head": "a8dfc11c809dc5eda95584d98bbfe7c0b3dfb3b25da1a9d6967152852e3a313c",
+        "rows": 8114
+      },
+      "limit_violations": 0,
+      "regime": {
+        "change_t": 2400,
+        "delay_steps": null,
+        "halt_t": 4702,
+        "pause_t": null,
+        "post_change_trades_settled_until_pause": null,
+        "within_declared_K": false
+      },
+      "replay": {
+        "candidates": 3896,
+        "executed": 220,
+        "halts": [
+          4702
+        ],
+        "max_drawdown_ppm": 211325,
+        "pauses": [],
+        "rejected": {
+          "BREAKER_HALTED": 1153,
+          "EDGE_NOT_ABOVE_THRESHOLD": 1124,
+          "MISSING_CONFIDENCE": 38,
+          "MISSING_COST": 40,
+          "RISK_POSITION_ALREADY_OPEN": 1063,
+          "VALIDATOR_VETO": 258
+        }
+      },
+      "seed": 20261011,
+      "signal_vs_truth": {
+        "estimated_fail_true_fail": 1516,
+        "estimated_fail_true_pass": 704,
+        "estimated_pass_true_fail": 1577,
+        "estimated_pass_true_pass": 1070,
+        "incomplete": 91
+      },
+      "simulated_result": {
+        "caption": "synthetic world with planted edge; not a performance",
+        "delta_units": -64202,
+        "final_equity_units": 935798,
+        "initial_units": 1000000
+      },
+      "stress": false,
+      "violations": [],
+      "world": "fifth"
+    }
+  ]
+}
