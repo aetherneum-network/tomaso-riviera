@@ -1,0 +1,22 @@
+{
+  "candidate": {
+    "candidate_id": "S07-FORGED",
+    "complement_price_ppm": 400000,
+    "confidence_ppm": 800000,
+    "confirm_ppm": 650000,
+    "conviction": "medium",
+    "cost": {
+      "fee_ppm": 5000,
+      "latency_steps": 0,
+      "slippage_ppm": 5000
+    },
+    "market_id": "P-M2",
+    "price_as_of": 9,
+    "price_ppm": 600000,
+    "prior_ppm": 600000,
+    "side": "NO",
+    "signal_ppm": 950000,
+    "t": 9
+  },
+  "note": "What a forger would add after the outcome of P-M2 (NO at t=30) is known: a candidate and an executed decision on the winning side, dated t=9."
+}

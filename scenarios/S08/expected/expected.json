@@ -1,0 +1,25 @@
+{
+  "how_derived": "The hand case is computed on paper. The 'declared' block is what the pack promises about the rule. The 'pinned' block is a MEASUREMENT on the development seed (20260930, measured 30 Sep 2026), kept as a regression pin: it is not derived by hand and it is not a claim about any other seed.",
+  "rule": {"n_sigma": 4, "window_trades": 50, "min_baseline_trades": 50},
+  "hand_case": {
+    "baseline_n": 100,
+    "baseline_mean_ppm": "0/1",
+    "baseline_variance_ppm2": "1000000000000/99",
+    "allowed_sq": "160000000000/33",
+    "inside": {"deviation_sq": "4848476161/1", "diverged": false},
+    "outside": {"deviation_sq": "4848615424/1", "diverged": true},
+    "unarmed_reason_below_min_baseline": "BASELINE_TOO_SMALL",
+    "why": "baseline: 50 trades at +100000 and 50 at -100000: mean 0, sample variance 100 x 100000^2 / 99 = 1000000000000/99. Allowed squared deviation = 4^2 x variance x (1/50 + 1/100) = 16 x 1000000000000/99 x 3/100 = 160000000000/33 = 4848484848.48... A window of 50 trades at 69631 has squared deviation 69631^2 = 4848476161 (inside); at -69632 it is 69632^2 = 4848615424 (outside; the rule is two-sided). A baseline of 49 trades does not arm the detector."
+  },
+  "declared": {
+    "pause_within_settled_trades": 150,
+    "false_pause_per_run_max_ppm": 20000,
+    "pause_within_K_min_ppm": 850000
+  },
+  "declared_why": "K = 150 settled trades after the change (three windows of 50). On seeded synthetic sequences: at most 2% of stationary runs are paused, at least 85% of runs with a change are paused within K. On the development corpus: the regime world is paused after the known instant and within K, before any halt; the stationary world is not paused.",
+  "pinned_measurement_dev": {
+    "seed": 20260930,
+    "measured_on": "2026-09-30",
+    "regime_change": {"change_t": 2400, "pause_t": 3069, "delay_steps": 669, "post_change_trades_settled_until_pause": 42}
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "hand_case": {
+    "baseline_magnitude_ppm": 100000,
+    "baseline_minus_count": 50,
+    "baseline_plus_count": 50,
+    "window_inside_value_ppm": 69631,
+    "window_outside_value_ppm": -69632
+  },
+  "regime_world": "regime_change",
+  "seed": 20260930,
+  "stationary_world": "planted_edge",
+  "study_runs": 300
+}

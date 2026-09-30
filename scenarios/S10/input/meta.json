@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "baseline_until_t": 0,
+  "candidates": 5,
+  "code": "S10",
+  "generator_version": "hand-written",
+  "markets": 5,
+  "note": "Hand-written. Five sizes: 2%, 3.81%, 4.5%, capped, exactly 4%. Not real data.",
+  "seed": null,
+  "steps": 51,
+  "stress": false,
+  "synthetic": true,
+  "world": "S10"
+}

@@ -1,0 +1,7 @@
+{
+  "file": "risk_limits.json",
+  "note": "The decision changes by editing the rule, never the output.",
+  "set": {
+    "cap_ppm": 40000
+  }
+}

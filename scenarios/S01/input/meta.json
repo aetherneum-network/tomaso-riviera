@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "baseline_until_t": 0,
+  "candidates": 6,
+  "code": "S01",
+  "generator_version": "hand-written",
+  "markets": 4,
+  "note": "Hand-written. Candidates without a confidence or without a cost. Not real data.",
+  "seed": null,
+  "steps": 51,
+  "stress": false,
+  "synthetic": true,
+  "world": "S01"
+}

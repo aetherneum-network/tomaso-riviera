@@ -1,0 +1,82 @@
+{
+  "pack": "tomaso-riviera",
+  "harness_version": "2.0.0",
+  "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "mode": "PAPER",
+  "data": "synthetic",
+  "passed": 10,
+  "total": 10,
+  "scenarios": [
+    {
+      "id": "S01",
+      "title": "Negative: a candidate without a confidence or without a cost is never traded",
+      "claim": "A1",
+      "passed": true,
+      "line": "S01 PASS - 5 incomplete candidates REJECTED with their reason, 1 complete control EXECUTED; a forged execution of an incomplete candidate is refused by the ledger"
+    },
+    {
+      "id": "S02",
+      "title": "Boundary: a net edge equal to the threshold does not trade",
+      "claim": "A1",
+      "passed": true,
+      "line": "S02 PASS - net edge 20000 (= threshold), 19999 and a cost above the edge do not trade; 20001 trades; forged executions at the threshold are refused by the ledger"
+    },
+    {
+      "id": "S03",
+      "title": "Validators are asymmetric: one veto refuses, approval needs a quorum of three",
+      "claim": "A2",
+      "passed": true,
+      "line": "S03 PASS - one veto among three approvals, two approvals only, a stale price, a market about to resolve: no trade; quorum of three trades; forged ballots caught"
+    },
+    {
+      "id": "S04",
+      "title": "The size is min(quarter Kelly, 5%) and never grows with conviction",
+      "claim": "A3",
+      "passed": true,
+      "line": "S04 PASS - sizes 38135 and 50000 units as the closed formula gives; identical under 'low' and 'extreme' conviction; oversized forged rows refused"
+    },
+    {
+      "id": "S05",
+      "title": "The breaker halts at a 20% drawdown; re-arming needs a human consent record",
+      "claim": "A4",
+      "passed": true,
+      "line": "S05 PASS - HALT at t=23 with equity 800000 (drawdown exactly 20%); strong signals refused while halted; 4 re-arm requests without a valid human consent refused; re-armed only by a consent naming the halt"
+    },
+    {
+      "id": "S06",
+      "title": "After losses the size shrinks and re-expands slowly, never to recover",
+      "claim": "A5",
+      "passed": true,
+      "line": "S06 PASS - sizes 50000 -> 35625 -> 25716 after two losses; no step up on a win, on time alone or on an edge equal to the bar; back to full size one level at a time (t=31, t=51)"
+    },
+    {
+      "id": "S07",
+      "title": "The ledger is append-only: a candidate inserted after the outcome is detected",
+      "claim": "A6",
+      "passed": true,
+      "line": "S07 PASS - a candidate inserted after the outcome is detected at the first altered row (seq 7), a backdated or edited row too; a full rewrite is caught by the published head and by the independent audit; the ledger API refuses all four attempts"
+    },
+    {
+      "id": "S08",
+      "title": "The replay is paused when it diverges from the backtested baseline by more than N sigma",
+      "claim": "A7",
+      "passed": true,
+      "line": "S08 PASS - boundary exact (69631 inside, 69632 outside at 4 sigma); regime world paused 42 settled trades after the change, stationary world not paused; study of 300 runs per kind: false pauses 0 and 2, paused within K in 280"
+    },
+    {
+      "id": "S09",
+      "title": "Leak test: a signal that uses the future fails the backtest",
+      "claim": "A7",
+      "passed": true,
+      "line": "S09 PASS - a signal reading the outcome and one reading a later quote both fail the backtest (LOOKAHEAD) with no ledger and no baseline; the past-only signal passes"
+    },
+    {
+      "id": "S10",
+      "title": "Rule change: the cap goes from 5% to 4% by editing the rule file",
+      "claim": "A3",
+      "passed": true,
+      "line": "S10 PASS - cap 5% -> 4% by one edit in the rule file: sizes 45000 and 50000 become 40000, sizes 20000, 38135 and 40000 do not move; the old ledger fails the audit at 4% on exactly those two"
+    }
+  ]
+}

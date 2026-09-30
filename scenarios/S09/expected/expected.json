@@ -1,0 +1,39 @@
+{
+  "how_derived": "On paper. The leak test calls a signal function twice per candidate, in time order: with a view of the whole stream and with a view cut at the candidate's own time. The first candidate for which the two answers differ fails the backtest.",
+  "signals": {
+    "leaky_outcome": {
+      "status": "FAILED", "reason": "LOOKAHEAD", "first_leaking_candidate": "S09-C1", "checked": 1,
+      "with_future": 10000, "without_future": 505000,
+      "ledger_written": false, "baseline": null, "trades_settled": 0
+    },
+    "leaky_last_quote": {
+      "status": "FAILED", "reason": "LOOKAHEAD", "first_leaking_candidate": "S09-C2", "checked": 2,
+      "with_future": 420000, "without_future": 400000,
+      "ledger_written": false, "baseline": null, "trades_settled": 0
+    },
+    "honest_mean": {
+      "status": "OK", "reason": null, "first_leaking_candidate": null, "checked": 8,
+      "with_future": null, "without_future": null,
+      "ledger_written": true, "baseline": {"n": 0, "mean_ppm": "0/1", "variance_ppm2": "0/1"}, "trades_settled": 0
+    }
+  },
+  "signals_why": {
+    "leaky_outcome": "S09-C1 is on P-M2 (side YES), which resolves NO at t=30: with the future the function answers 10000, at t=2 it can only return the recorded 505000.",
+    "leaky_last_quote": "S09-C1: both quotes of P-M2 are 500000, no difference. S09-C2 (t=3) is on P-M1, whose last quote in the whole stream is 420000 (t=6); at t=3 the last visible quote is 400000.",
+    "honest_mean": "uses only quotes dated at or before the candidate: identical answers in both views for all 8 candidates."
+  },
+  "honest_decisions": {
+    "S09-C1": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C2": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C3": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C4": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C5": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C6": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C7": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    "S09-C8": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"}
+  },
+  "honest_decisions_why": "a mean of past quotes is at most the current price plus a few thousand ppm; after the cost of 10000 no net edge is above 20000: a signal without information does not trade.",
+  "honest_ledger_rows": 21,
+  "honest_ledger_rows_why": "1 genesis + 8 candidates + 8 decisions + 4 settlements",
+  "stated_limit": "The test sees only what goes through the view. A function that reads files behind the harness's back is not detected."
+}

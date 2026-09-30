@@ -1,0 +1,37 @@
+{
+  "how_derived": "On paper. The honest ledger has 10 rows: 0 genesis; 1-2 candidate and decision of S07-C1 (t=5); 3-4 of S07-C2 (t=8); 5 settlement of P-M1 (t=20); 6-7 of S07-C3 (t=25); 8 settlement of P-M2 (t=30, outcome NO); 9 settlement of P-M3 (t=40). The forger knows that P-M2 resolved NO and wants a candidate and an executed decision on NO dated t=9, i.e. between row 4 and row 5.",
+  "decisions": {
+    "S07-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S07-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "throttle_level": 0},
+    "S07-C3": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD", "why": "p_hat 420000, net edge 10000"}
+  },
+  "ledger_rows": 10,
+  "insert_at_seq": 5,
+  "edit_seq": 4,
+  "tamper": {
+    "a_inserted_tail_untouched": {"ok": false, "first_bad_seq": 7, "reason": "SEQ_OUT_OF_ORDER"},
+    "a_reference": {"ok": false, "first_bad_seq": 7, "reason": "SEQ"},
+    "b_full_rewrite": {
+      "self_consistent_without_a_published_head": true,
+      "with_published_head": {"ok": false, "first_bad_seq": 11, "reason": "HEAD_DIFFERS_FROM_PUBLISHED_HEAD"},
+      "reference_audit_violations": [[6, "POSITION_STACKED"]]
+    },
+    "c_backdated_append": {"ok": false, "first_bad_seq": 10, "reason": "TIME_GOES_BACKWARDS",
+                           "all_reasons": ["CANDIDATE_AFTER_OUTCOME", "TIME_GOES_BACKWARDS"]},
+    "d_edited_in_place": {"ok": false, "first_bad_seq": 4, "reason": "ROW_HASH_MISMATCH"},
+    "e_api_refusals": [
+      ["candidate_dated_before_the_outcome", "CANDIDATE_AFTER_OUTCOME"],
+      ["candidate_dated_now", "CANDIDATE_AFTER_OUTCOME"],
+      ["raw_backdated_row", "BACKDATED_ROW"],
+      ["decision_without_candidate", "DECISION_WITHOUT_CANDIDATE"]
+    ],
+    "e_file_unchanged": true
+  },
+  "tamper_why": {
+    "a": "rows 5 and 6 are the forged pair, correctly hashed; row 7 is the old row 5: its sequence number is 5 and its 'prev' is the hash of row 4. First altered row: 7.",
+    "b": "stated limit: a forger who re-hashes every later row produces a file that verifies on its own. It is caught by the published head (the last row, seq 11, has another hash) and by the independent audit (a second position on a market that already has one, seq 6).",
+    "c": "row 10 is dated t=9 after a row dated t=40, and its market already has an outcome.",
+    "d": "the stake of row 4 is changed and the row keeps its old hash.",
+    "e": "a candidate for a market whose outcome is known is refused whatever its date; a row dated before the last row is refused; a decision with no candidate row is refused. The file is byte-identical afterwards."
+  }
+}

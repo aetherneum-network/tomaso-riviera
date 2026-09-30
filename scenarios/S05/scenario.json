@@ -1,0 +1,12 @@
+{
+  "id": "S05",
+  "title": "The breaker halts at a 20% drawdown; re-arming needs a human consent record",
+  "claim": "A4",
+  "run": [
+    "python",
+    "check.py"
+  ],
+  "timeout_s": 60,
+  "expect_exit": 0,
+  "data": "synthetic, hand-written or generated from a seed; paper trading only"
+}

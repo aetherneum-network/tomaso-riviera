@@ -1,0 +1,12 @@
+{
+  "id": "S02",
+  "title": "Boundary: a net edge equal to the threshold does not trade",
+  "claim": "A1",
+  "run": [
+    "python",
+    "check.py"
+  ],
+  "timeout_s": 60,
+  "expect_exit": 0,
+  "data": "synthetic, hand-written or generated from a seed; paper trading only"
+}

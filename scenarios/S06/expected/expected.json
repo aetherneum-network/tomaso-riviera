@@ -1,0 +1,30 @@
+{
+  "how_derived": "On paper, from rules/throttle.json: each losing settlement raises the level by one (size x 3/4 per level); the level comes down by ONE only if at least 20 steps have passed since the last change AND the candidate's net edge is above 40000 ppm. All candidates but C5 are strong (5% cap binds; q = 410000).",
+  "equity_after_first_three_settlements": [950000, 914375, 951380],
+  "equity_why": "t=5 loss of 50000 -> 950000; t=10 loss of 35625 -> 914375; t=15 win: 914375 - 25716 + 62721 = 951380",
+  "decisions": {
+    "S06-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "t=1, level 0: 5% x 1000000"},
+    "S06-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 35625, "payout_if_win_units": 86890, "throttle_level": 1,
+               "why": "t=6, one loss: 5% x 3/4 x 950000 = 35625"},
+    "S06-C3": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 25716, "payout_if_win_units": 62721, "throttle_level": 2,
+               "why": "t=11, two losses: 5% x 9/16 x 914375 = 25716.8 -> 25716"},
+    "S06-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 26757, "payout_if_win_units": 65260, "throttle_level": 2,
+               "why": "t=20, after a win: a win does not lower the level, and only 10 steps have passed since the last change (t=10): 5% x 9/16 x 951380 = 26757.5 -> 26757"},
+    "S06-C5": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 9070, "payout_if_win_units": 22121, "throttle_level": 2,
+               "why": "t=30: 20 steps have passed, but the net edge is 450000 - 410000 = 40000, equal to the bar and not above it: level stays 2. Kelly 40000/590000 = 4/59, a quarter 1/59: 951380 x 1/59 x 9/16 = 9070.3 -> 9070"},
+    "S06-C6": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 35676, "payout_if_win_units": 87014, "throttle_level": 1,
+               "why": "t=31: 21 steps since t=10 and net edge 390000 > 40000: one level down, to 1: 5% x 3/4 x 951380 = 35676.7 -> 35676"},
+    "S06-C7": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 35676, "payout_if_win_units": 87014, "throttle_level": 1,
+               "why": "t=32: strong edge, but only 1 step since the change at t=31: level stays 1"},
+    "S06-C8": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 47569, "payout_if_win_units": 116021, "throttle_level": 0,
+               "why": "t=51: exactly 20 steps since t=31 ('at least 20'): level 0: 5% x 951380 = 47569"}
+  },
+  "level_sequence": {
+    "candidates": ["S06-C1", "S06-C2", "S06-C3", "S06-C4", "S06-C5", "S06-C6", "S06-C7", "S06-C8"],
+    "levels": [0, 1, 2, 2, 2, 1, 1, 0]
+  },
+  "ledger_rows": 25,
+  "ledger_rows_why": "1 genesis + 8 candidates + 8 decisions + 8 settlements",
+  "forged_multiplier_above_one": "THROTTLE_MULTIPLIER_INVALID"
+}

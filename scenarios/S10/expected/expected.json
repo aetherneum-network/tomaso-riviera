@@ -1,0 +1,21 @@
+{
+  "how_derived": "On paper. Default cost 10000; equity 1000000 for every candidate. C1, C3, C5 are quoted at 490000 (q = 500000), confidence 0.5: p_hat = 490000 + half of (signal - 490000). Kelly f* = (p - q)/(1 - q); used = min(f*/4, cap).",
+  "decisions_cap_5_percent": {
+    "S10-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 20000, "payout_if_win_units": 40000, "why": "p 540000: f* 8%, a quarter 2%"},
+    "S10-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "why": "p 500000 at q 410000: a quarter of 9/59 = 3.81%"},
+    "S10-C3": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 45000, "payout_if_win_units": 90000, "why": "p 590000: f* 18%, a quarter 4.5%"},
+    "S10-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "why": "a quarter of Kelly is 16.5%: capped at 5%"},
+    "S10-C5": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 40000, "payout_if_win_units": 80000, "why": "p 580000: f* 16%, a quarter exactly 4%"}
+  },
+  "decisions_cap_4_percent": {
+    "S10-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 20000, "payout_if_win_units": 40000},
+    "S10-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012},
+    "S10-C3": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 40000, "payout_if_win_units": 80000, "why": "4.5% is now above the cap"},
+    "S10-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 40000, "payout_if_win_units": 97560, "why": "capped at 4%; payout floor(40000000000/410000) = 97560"},
+    "S10-C5": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 40000, "payout_if_win_units": 80000, "why": "exactly 4%: at the cap, not above it"}
+  },
+  "changed": ["S10-C3", "S10-C4"],
+  "flagged_when_old_ledger_is_audited_at_4_percent": ["S10-C3", "S10-C4"],
+  "ledger_rows": 16,
+  "ledger_rows_why": "1 genesis + 5 candidates + 5 decisions + 5 settlements"
+}

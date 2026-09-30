@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-01T09:00:00+02:00",
+  "baseline_until_t": 0,
+  "candidates": 8,
+  "code": "S06",
+  "generator_version": "hand-written",
+  "markets": 8,
+  "note": "Hand-written. Two losses, one win, then recovery. Not real data.",
+  "seed": null,
+  "steps": 91,
+  "stress": false,
+  "synthetic": true,
+  "world": "S06"
+}

@@ -1,0 +1,9 @@
+{
+  "acknowledged_drawdown_ppm": 200000,
+  "halt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "kind": "HUMAN_REARM_CONSENT",
+  "operator": "Fixture Operator (test record)",
+  "operator_is_human": true,
+  "signed_at_t": 33,
+  "statement": "I have read the halt and I re-arm the breaker."
+}

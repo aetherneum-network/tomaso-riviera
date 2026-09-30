@@ -1,0 +1,24 @@
+{
+  "how_derived": "On paper. Six strong candidates (estimate 0.80 at price 0.40) are each sized at the 5% cap of an equity of 1000000 = 50000 (the portfolio limit of 30% is reached exactly, not exceeded). Their six markets resolve against them at t=20..25. The breaker halts when (peak - equity)/peak >= 20%.",
+  "decisions": {
+    "S05-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C3": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C5": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C6": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0},
+    "S05-C7": {"decision": "REJECTED", "reason": "BREAKER_HALTED", "why": "t=30, a strong signal, the breaker is halted"},
+    "S05-C8": {"decision": "REJECTED", "reason": "BREAKER_HALTED", "why": "t=35, after four refused re-arm requests: still halted"},
+    "S05-C9": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 11074, "payout_if_win_units": 27009, "throttle_level": 4,
+               "why": "t=37, after the re-arm at t=36. Equity 700000; six losses put the throttle at its maximum level 4: 5% x (3/4)^4 x 700000 = 0.05 x 81/256 x 700000 = 11074.2 -> 11074; payout floor(11074000000/410000) = 27009. Re-arming does not restore the size."}
+  },
+  "equity_after_each_loss": [950000, 900000, 850000, 800000, 750000, 700000],
+  "halt": {"t": 23, "equity_units": 800000, "peak_units": 1000000, "drawdown_ppm": 200000},
+  "halt_why": "fourth loss: (1000000 - 800000)/1000000 = 20% exactly; the comparison is 'greater or equal'. The HALT row is the row right after that settlement.",
+  "rearm_refused": ["NO_CONSENT_RECORD", "CONSENT_NOT_HUMAN", "CONSENT_FOR_ANOTHER_HALT", "CONSENT_FILE_NOT_FOUND"],
+  "rearm_refused_why": "t=31 no record at all; t=32 a record that declares an agent; t=33 a human record that names another halt; t=34 a file that does not exist",
+  "rearm": {"t": 36, "peak_reset_to_units": 700000},
+  "ledger_rows": 33,
+  "ledger_rows_why": "1 genesis + 9 candidates + 9 decisions + 8 settlements + 1 HALT + 4 REARM_REFUSED + 1 REARM",
+  "forged_execution_while_halted": "EXECUTION_WHILE_HALTED"
+}
