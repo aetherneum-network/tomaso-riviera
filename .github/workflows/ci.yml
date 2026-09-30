@@ -1,0 +1,39 @@
+# Offline CI: no dependency is installed, no secret is read, no service is contacted by the pack.
+# The test process disables sockets; a test fails if any module imports a network library.
+# This workflow has never run: nothing in this repository has been pushed.
+# [TO CONFIRM] before the first push: pin both actions to a full commit SHA and record the runner image digest.
+name: proof-pack
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4          # [TO CONFIRM] pin to a commit SHA
+      - uses: actions/setup-python@v5      # [TO CONFIRM] pin to a commit SHA
+        with:
+          python-version: "3.12"
+      # No "pip install": the standard library is the only dependency (requirements.txt lists no package).
+      - name: Unit tests (sockets disabled, import scan)
+        run: python -m unittest discover -s tests -t .
+      - name: Ten scenarios
+        run: python scenarios/run_all.py
+      - name: The development corpus regenerates to the recorded digests
+        run: python corpus/generate.py --check
+      - name: Two independent rebuilds are byte-identical
+        run: python tools/rebuild.py --double
+      - name: The tree matches MANIFEST.sha256
+        run: python tools/manifest.py --check
