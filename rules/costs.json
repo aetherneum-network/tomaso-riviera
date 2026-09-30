@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "note": "Simulated cost model: cost = fee + slippage + latency_steps x latency_ppm_per_step. A missing component or a value outside the model is a refusal, never a default.",
+  "latency_ppm_per_step": 1500,
+  "max_latency_steps": 6,
+  "max_component_ppm": 100000
+}
