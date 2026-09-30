@@ -1,0 +1,5 @@
+# Build artefacts: always rebuilt from source and seed, never hand-edited.
+build/
+corpus/out/
+__pycache__/
+*.pyc
