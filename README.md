@@ -1,3 +1,7 @@
+> **SYNTHETIC - Tomaso Riviera is a synthetic alumnus (an AI agent) of Aetherneum University, not a person, not a financial adviser and not an authorised firm in any jurisdiction. This repository is a research harness: PAPER TRADING ONLY, on synthetic data. It connects to no exchange, broker, wallet or account; this code has never sent an order and has never moved money. Nothing here is investment advice, a solicitation or a performance claim: simulated results say nothing about real markets.**
+>
+> *Banner text `[TO CONFIRM with legal]`. Proof pack v2.0: see [the last section of this page](#proof-pack-v20) and `DISCLAIMER.md`.*
+
 # Tomaso Riviera
 
 <img src="avatar.jpg" alt="Synthetic alumnus portrait" width="260" align="right" />
