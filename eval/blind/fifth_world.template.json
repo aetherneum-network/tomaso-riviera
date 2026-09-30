@@ -1,0 +1,14 @@
+{
+  "_note": "TEMPLATE written by the author. A blind run needs a copy of this file with parameters chosen by the hand that runs it; the run refuses this file itself. Keys starting with an underscore are comments. All values are integers in parts per million, except from_t and latency_steps (steps). Allowed ranges: p_side_ppm inside [100000, 950000]; confidence_ppm inside [0, 1000000]; true_edge_ppm and signal_bias_ppm inside [-300000, 300000]; noise up to 300000; fee up to 200000; slippage up to 200000; latency up to 50 steps; from_t strictly increasing, first 0, below 6000. A regime may carry its own p_side_ppm. price = p_side - true edge; signal = p_side + bias + noise.",
+  "p_side_ppm": [300000, 700000],
+  "confidence_ppm": [300000, 900000],
+  "regimes": [
+    {"from_t": 0, "true_edge_ppm": [50000, 70000], "signal_bias_ppm": 0},
+    {"from_t": 3000, "true_edge_ppm": [-20000, 0, 20000], "signal_bias_ppm": 40000}
+  ],
+  "noise_ppm": 60000,
+  "confirm_noise_ppm": 60000,
+  "fee_ppm": 8000,
+  "slippage_ppm": [2000, 12000],
+  "latency_steps": [0, 3]
+}

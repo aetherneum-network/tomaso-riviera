@@ -1,0 +1,1159 @@
+{
+  "blind": {
+    "note": "run once by a different hand at the tag v2.0.0-freeze; see eval/BLIND_PROTOCOL.md",
+    "status": "PENDING"
+  },
+  "detector_study": {
+    "baseline_trades": 90,
+    "declared": {
+      "false_pause_per_run_max_ppm": 20000,
+      "pause_within_K_min_ppm": 850000,
+      "pause_within_settled_trades": 150
+    },
+    "false_pause_runs_favourites": 15,
+    "false_pause_runs_planted_like": 4,
+    "regime_delay_trades_max": 196,
+    "regime_delay_trades_median": 46,
+    "regime_runs_never_paused": 93,
+    "regime_runs_paused_before_change": 3,
+    "regime_runs_paused_within_declared_K": 1828,
+    "replay_trades": 250,
+    "rule": {
+      "min_baseline_trades": 50,
+      "n_sigma": 4,
+      "window_trades": 50
+    },
+    "runs_per_kind": 2000,
+    "seed": 20260930,
+    "windows_per_run": 5
+  },
+  "measured_on": "2026-09-30",
+  "note": "Headline numbers are limits, agreement with the independent references and ledger integrity. The simulated result of a world is not a metric and not a performance.",
+  "suites": {
+    "dev": {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "code_sha256": "e9eec874c310e5b17ffdc5b1bc3e26a9974231ffb237e74f1a7e99f05247f407",
+      "generator_version": "2.0.0",
+      "harness_version": "2.0.0",
+      "headline": {
+        "decisions_agree": 19860,
+        "decisions_total": 19860,
+        "ledger_rows": 41344,
+        "ledgers_chain_ok": true,
+        "limit_violations": 0,
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0
+      },
+      "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+      "seed": 20260930,
+      "stress": false,
+      "suite": "dev",
+      "worlds": [
+        {
+          "calibration": {
+            "expected_wins_milli": 156419,
+            "settled_trades": 311,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 152,
+            "z_milli": -521
+          },
+          "decisions": {
+            "agree": 4949,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4949
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 79,
+            "unarmed_reason": null,
+            "windows_checked": 4
+          },
+          "ledger": {
+            "backtest_rows": 2562,
+            "chain_ok": true,
+            "head": "6e441f4eceff2934348bf3681f8410038388987ee064450c271384595dbeaecd",
+            "rows": 7743
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3718,
+            "executed": 232,
+            "halts_t": [],
+            "max_drawdown_ppm": 189408,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 2453,
+              "MISSING_CONFIDENCE": 27,
+              "MISSING_COST": 35,
+              "RISK_POSITION_ALREADY_OPEN": 192,
+              "VALIDATOR_VETO": 779
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4146,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 719,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 84
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": -153753,
+            "final_equity_units": 846247,
+            "initial_units": 1000000
+          },
+          "world": "null"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 210891,
+            "settled_trades": 400,
+            "trades_with_true_net_edge_above_threshold": 400,
+            "wins": 214,
+            "z_milli": 322
+          },
+          "decisions": {
+            "agree": 4969,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4969
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 110,
+            "unarmed_reason": null,
+            "windows_checked": 5
+          },
+          "ledger": {
+            "backtest_rows": 2851,
+            "chain_ok": true,
+            "head": "7aa971bc9745492914466cdcfa07657ee724897c4558a0ca89966b6f9387fa27",
+            "rows": 7495
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3599,
+            "executed": 290,
+            "halts_t": [],
+            "max_drawdown_ppm": 58228,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 670,
+              "MISSING_CONFIDENCE": 41,
+              "MISSING_COST": 39,
+              "RISK_POSITION_ALREADY_OPEN": 2192,
+              "VALIDATOR_VETO": 367
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 1054,
+            "estimated_pass_true_fail": 0,
+            "estimated_pass_true_pass": 3812,
+            "incomplete": 103
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 580995,
+            "final_equity_units": 1580995,
+            "initial_units": 1000000
+          },
+          "world": "planted_edge"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 172605,
+            "settled_trades": 213,
+            "trades_with_true_net_edge_above_threshold": 167,
+            "wins": 177,
+            "z_milli": 815
+          },
+          "decisions": {
+            "agree": 4967,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4967
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 109,
+            "unarmed_reason": null,
+            "windows_checked": 2
+          },
+          "ledger": {
+            "backtest_rows": 2848,
+            "chain_ok": true,
+            "head": "543f709c7dc35b452d663685af2c386bdfc999f5988b465b1f13757a5a7f959b",
+            "rows": 7492
+          },
+          "limit_violations": 0,
+          "regime": {
+            "change_t": 2400,
+            "delay_steps": 669,
+            "halt_t": null,
+            "pause_t": 3069,
+            "post_change_trades_settled_until_pause": 42,
+            "within_declared_K": true
+          },
+          "replay": {
+            "candidates": 3598,
+            "executed": 104,
+            "halts_t": [],
+            "max_drawdown_ppm": 119755,
+            "pauses_t": [
+              3069
+            ],
+            "rejected": {
+              "MISSING_CONFIDENCE": 35,
+              "MISSING_COST": 34,
+              "RISK_POSITION_ALREADY_OPEN": 1003,
+              "SIGNAL_PAUSED": 2300,
+              "VALIDATOR_VETO": 122
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 2840,
+            "estimated_pass_true_pass": 2030,
+            "incomplete": 97
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 1343707,
+            "final_equity_units": 2343707,
+            "initial_units": 1000000
+          },
+          "world": "regime_change"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 4249,
+            "settled_trades": 9,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 4,
+            "z_milli": -171
+          },
+          "decisions": {
+            "agree": 4975,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4975
+          },
+          "detector": {
+            "armed": false,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 3,
+            "unarmed_reason": "BASELINE_TOO_SMALL",
+            "windows_checked": 0
+          },
+          "ledger": {
+            "backtest_rows": 2810,
+            "chain_ok": true,
+            "head": "e175435ec476100ee5fee27a906d3032506a556ca3f92fc4618a9188abad56a7",
+            "rows": 7543
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3624,
+            "executed": 6,
+            "halts_t": [],
+            "max_drawdown_ppm": 17136,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 3157,
+              "MISSING_CONFIDENCE": 48,
+              "MISSING_COST": 32,
+              "VALIDATOR_VETO": 381
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4863,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 11,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 101
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 309,
+            "final_equity_units": 1000309,
+            "initial_units": 1000000
+          },
+          "world": "high_cost"
+        }
+      ]
+    },
+    "holdout": {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "code_sha256": "e9eec874c310e5b17ffdc5b1bc3e26a9974231ffb237e74f1a7e99f05247f407",
+      "generator_version": "2.0.0",
+      "harness_version": "2.0.0",
+      "headline": {
+        "decisions_agree": 20047,
+        "decisions_total": 20047,
+        "ledger_rows": 41720,
+        "ledgers_chain_ok": true,
+        "limit_violations": 0,
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0
+      },
+      "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+      "seed": 20261001,
+      "stress": false,
+      "suite": "holdout",
+      "worlds": [
+        {
+          "calibration": {
+            "expected_wins_milli": 153760,
+            "settled_trades": 302,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 146,
+            "z_milli": -933
+          },
+          "decisions": {
+            "agree": 5004,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 5004
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 68,
+            "unarmed_reason": null,
+            "windows_checked": 4
+          },
+          "ledger": {
+            "backtest_rows": 2405,
+            "chain_ok": true,
+            "head": "50a02eccffcef44c77dd2b1683ab0b6f057a972926322e84cf5db0e877307cff",
+            "rows": 8010
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3847,
+            "executed": 234,
+            "halts_t": [],
+            "max_drawdown_ppm": 194154,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 2536,
+              "MISSING_CONFIDENCE": 27,
+              "MISSING_COST": 39,
+              "RISK_POSITION_ALREADY_OPEN": 203,
+              "VALIDATOR_VETO": 808
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4207,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 704,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 93
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": -140246,
+            "final_equity_units": 859754,
+            "initial_units": 1000000
+          },
+          "world": "null"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 211159,
+            "settled_trades": 400,
+            "trades_with_true_net_edge_above_threshold": 400,
+            "wins": 193,
+            "z_milli": -1883
+          },
+          "decisions": {
+            "agree": 4992,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4992
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 86,
+            "unarmed_reason": null,
+            "windows_checked": 6
+          },
+          "ledger": {
+            "backtest_rows": 2325,
+            "chain_ok": true,
+            "head": "ead5dc36da23dafc82bfb4ff4fd506257bcc693e51259df5963ea000b2944421",
+            "rows": 8068
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3873,
+            "executed": 314,
+            "halts_t": [],
+            "max_drawdown_ppm": 196203,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 779,
+              "MISSING_CONFIDENCE": 37,
+              "MISSING_COST": 34,
+              "RISK_POSITION_ALREADY_OPEN": 2302,
+              "VALIDATOR_VETO": 407
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 1155,
+            "estimated_pass_true_fail": 0,
+            "estimated_pass_true_pass": 3747,
+            "incomplete": 90
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 124622,
+            "final_equity_units": 1124622,
+            "initial_units": 1000000
+          },
+          "world": "planted_edge"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 184368,
+            "settled_trades": 240,
+            "trades_with_true_net_edge_above_threshold": 155,
+            "wins": 189,
+            "z_milli": 753
+          },
+          "decisions": {
+            "agree": 5032,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 5032
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 87,
+            "unarmed_reason": null,
+            "windows_checked": 3
+          },
+          "ledger": {
+            "backtest_rows": 2302,
+            "chain_ok": true,
+            "head": "be263df9e60cfe8616ca66040325c4901a675ac42aed15841b935d1f7946757d",
+            "rows": 8169
+          },
+          "limit_violations": 0,
+          "regime": {
+            "change_t": 2400,
+            "delay_steps": 1153,
+            "halt_t": null,
+            "pause_t": 3553,
+            "post_change_trades_settled_until_pause": 82,
+            "within_declared_K": true
+          },
+          "replay": {
+            "candidates": 3925,
+            "executed": 153,
+            "halts_t": [],
+            "max_drawdown_ppm": 126372,
+            "pauses_t": [
+              3553
+            ],
+            "rejected": {
+              "MISSING_CONFIDENCE": 25,
+              "MISSING_COST": 41,
+              "RISK_POSITION_ALREADY_OPEN": 1522,
+              "SIGNAL_PAUSED": 1998,
+              "VALIDATOR_VETO": 186
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 3012,
+            "estimated_pass_true_pass": 1938,
+            "incomplete": 82
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 1155471,
+            "final_equity_units": 2155471,
+            "initial_units": 1000000
+          },
+          "world": "regime_change"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 4014,
+            "settled_trades": 8,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 4,
+            "z_milli": -10
+          },
+          "decisions": {
+            "agree": 5019,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 5019
+          },
+          "detector": {
+            "armed": false,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 2,
+            "unarmed_reason": "BASELINE_TOO_SMALL",
+            "windows_checked": 0
+          },
+          "ledger": {
+            "backtest_rows": 2982,
+            "chain_ok": true,
+            "head": "ab86019ba0c1de2e96a2568448db185d19d36068ec24ad640d31ac6124787662",
+            "rows": 7459
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3585,
+            "executed": 6,
+            "halts_t": [],
+            "max_drawdown_ppm": 22974,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 3172,
+              "MISSING_CONFIDENCE": 30,
+              "MISSING_COST": 35,
+              "VALIDATOR_VETO": 342
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4921,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 9,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 89
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 9304,
+            "final_equity_units": 1009304,
+            "initial_units": 1000000
+          },
+          "world": "high_cost"
+        }
+      ]
+    },
+    "rehearsal": {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "code_sha256": "e9eec874c310e5b17ffdc5b1bc3e26a9974231ffb237e74f1a7e99f05247f407",
+      "generator_version": "2.0.0",
+      "hand_candidates": {
+        "agree_with_the_hand": 4,
+        "count": 4,
+        "ledger_head": "795358ad2176eccb5c8f543a31e3f37ae6193ef1987c7c9b374804187cb98edc",
+        "limit_violations": 0,
+        "reference_mismatches": 0
+      },
+      "harness_version": "2.0.0",
+      "headline": {
+        "decisions_agree": 24922,
+        "decisions_total": 24922,
+        "ledger_rows": 51877,
+        "ledgers_chain_ok": true,
+        "limit_violations": 0,
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0
+      },
+      "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+      "runner": "rehearsal by the author on his own templates (not a blind run)",
+      "seed": 20260929,
+      "stress": false,
+      "suite": "rehearsal",
+      "worlds": [
+        {
+          "calibration": {
+            "expected_wins_milli": 154907,
+            "settled_trades": 311,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 168,
+            "z_milli": 1550
+          },
+          "decisions": {
+            "agree": 4926,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4926
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 73,
+            "unarmed_reason": null,
+            "windows_checked": 4
+          },
+          "ledger": {
+            "backtest_rows": 2444,
+            "chain_ok": true,
+            "head": "afba81b0f90aa112bad7252bdc3771a52153dbc308a22c3811d455ff6f1a82aa",
+            "rows": 7815
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3752,
+            "executed": 238,
+            "halts_t": [],
+            "max_drawdown_ppm": 97568,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 2454,
+              "MISSING_CONFIDENCE": 23,
+              "MISSING_COST": 35,
+              "RISK_POSITION_ALREADY_OPEN": 207,
+              "VALIDATOR_VETO": 795
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4098,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 741,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 87
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 176546,
+            "final_equity_units": 1176546,
+            "initial_units": 1000000
+          },
+          "world": "null"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 210682,
+            "settled_trades": 400,
+            "trades_with_true_net_edge_above_threshold": 400,
+            "wins": 210,
+            "z_milli": -70
+          },
+          "decisions": {
+            "agree": 4996,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4996
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 109,
+            "unarmed_reason": null,
+            "windows_checked": 5
+          },
+          "ledger": {
+            "backtest_rows": 2846,
+            "chain_ok": true,
+            "head": "1160e22ad5874231461d95028bf69555723bcb092af7a8f304ec446a27162808",
+            "rows": 7554
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3628,
+            "executed": 291,
+            "halts_t": [],
+            "max_drawdown_ppm": 93407,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 711,
+              "MISSING_CONFIDENCE": 38,
+              "MISSING_COST": 31,
+              "RISK_POSITION_ALREADY_OPEN": 2212,
+              "VALIDATOR_VETO": 345
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 1088,
+            "estimated_pass_true_fail": 0,
+            "estimated_pass_true_pass": 3821,
+            "incomplete": 87
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 328630,
+            "final_equity_units": 1328630,
+            "initial_units": 1000000
+          },
+          "world": "planted_edge"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 198313,
+            "settled_trades": 257,
+            "trades_with_true_net_edge_above_threshold": 173,
+            "wins": 206,
+            "z_milli": 1217
+          },
+          "decisions": {
+            "agree": 4950,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4950
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 105,
+            "unarmed_reason": null,
+            "windows_checked": 3
+          },
+          "ledger": {
+            "backtest_rows": 2762,
+            "chain_ok": true,
+            "head": "fc6330ae15d00b94651b93e170241cd6af74ed90fb3641eea4293402697d2061",
+            "rows": 7545
+          },
+          "limit_violations": 0,
+          "regime": {
+            "change_t": 2400,
+            "delay_steps": 1258,
+            "halt_t": null,
+            "pause_t": 3658,
+            "post_change_trades_settled_until_pause": 82,
+            "within_declared_K": true
+          },
+          "replay": {
+            "candidates": 3622,
+            "executed": 152,
+            "halts_t": [],
+            "max_drawdown_ppm": 57023,
+            "pauses_t": [
+              3658
+            ],
+            "rejected": {
+              "MISSING_CONFIDENCE": 34,
+              "MISSING_COST": 44,
+              "RISK_POSITION_ALREADY_OPEN": 1446,
+              "SIGNAL_PAUSED": 1747,
+              "VALIDATOR_VETO": 199
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 2755,
+            "estimated_pass_true_pass": 2088,
+            "incomplete": 107
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 1877375,
+            "final_equity_units": 2877375,
+            "initial_units": 1000000
+          },
+          "world": "regime_change"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 4058,
+            "settled_trades": 8,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 5,
+            "z_milli": 701
+          },
+          "decisions": {
+            "agree": 5083,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 5083
+          },
+          "detector": {
+            "armed": false,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 2,
+            "unarmed_reason": "BASELINE_TOO_SMALL",
+            "windows_checked": 0
+          },
+          "ledger": {
+            "backtest_rows": 2543,
+            "chain_ok": true,
+            "head": "adee96d5cf6f2e16516f01cc19e1c3a8236212a85d9663303202e85559eb4d6e",
+            "rows": 8026
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3859,
+            "executed": 6,
+            "halts_t": [],
+            "max_drawdown_ppm": 16234,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 3413,
+              "MISSING_CONFIDENCE": 33,
+              "MISSING_COST": 38,
+              "VALIDATOR_VETO": 369
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 4978,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 10,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 95
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 32928,
+            "final_equity_units": 1032928,
+            "initial_units": 1000000
+          },
+          "world": "high_cost"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 190941,
+            "settled_trades": 386,
+            "trades_with_true_net_edge_above_threshold": 213,
+            "wins": 194,
+            "z_milli": 319
+          },
+          "decisions": {
+            "agree": 4967,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4967
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 110,
+            "unarmed_reason": null,
+            "windows_checked": 5
+          },
+          "ledger": {
+            "backtest_rows": 2884,
+            "chain_ok": true,
+            "head": "6fdd6aafc999376e69e9c0a734f2f45c202ba1f07243189aa07c625edbc1113c",
+            "rows": 7458
+          },
+          "limit_violations": 0,
+          "regime": {
+            "change_t": 3000,
+            "delay_steps": null,
+            "halt_t": null,
+            "pause_t": null,
+            "post_change_trades_settled_until_pause": null,
+            "within_declared_K": false
+          },
+          "replay": {
+            "candidates": 3581,
+            "executed": 276,
+            "halts_t": [],
+            "max_drawdown_ppm": 68682,
+            "pauses_t": [],
+            "rejected": {
+              "EDGE_NOT_ABOVE_THRESHOLD": 2203,
+              "MISSING_CONFIDENCE": 38,
+              "MISSING_COST": 33,
+              "RISK_POSITION_ALREADY_OPEN": 666,
+              "VALIDATOR_VETO": 365
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 1743,
+            "estimated_fail_true_pass": 1523,
+            "estimated_pass_true_fail": 524,
+            "estimated_pass_true_pass": 1078,
+            "incomplete": 99
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 164512,
+            "final_equity_units": 1164512,
+            "initial_units": 1000000
+          },
+          "world": "fifth"
+        }
+      ]
+    },
+    "stress": {
+      "as_of": "2026-10-01T09:00:00+02:00",
+      "code_sha256": "e9eec874c310e5b17ffdc5b1bc3e26a9974231ffb237e74f1a7e99f05247f407",
+      "generator_version": "2.0.0",
+      "harness_version": "2.0.0",
+      "headline": {
+        "decisions_agree": 18594,
+        "decisions_total": 18594,
+        "ledger_rows": 38811,
+        "ledgers_chain_ok": true,
+        "limit_violations": 0,
+        "max_size_deviation_units": 0,
+        "other_mismatches": 0
+      },
+      "rules_sha256": "ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0",
+      "seed": 20261002,
+      "stress": true,
+      "suite": "stress",
+      "worlds": [
+        {
+          "calibration": {
+            "expected_wins_milli": 102489,
+            "settled_trades": 207,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 118,
+            "z_milli": 2255
+          },
+          "decisions": {
+            "agree": 4582,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4582
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 93,
+            "unarmed_reason": null,
+            "windows_checked": 2
+          },
+          "ledger": {
+            "backtest_rows": 4117,
+            "chain_ok": true,
+            "head": "930e754ba0b7322912204c7b5b8d62475df1f94436d8d88b553e794de40bfd87",
+            "rows": 5452
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 2602,
+            "executed": 114,
+            "halts_t": [],
+            "max_drawdown_ppm": 191730,
+            "pauses_t": [],
+            "rejected": {
+              "COST_OUT_OF_MODEL": 1176,
+              "EDGE_NOT_ABOVE_THRESHOLD": 759,
+              "MISSING_CONFIDENCE": 33,
+              "MISSING_COST": 22,
+              "RISK_POSITION_ALREADY_OPEN": 51,
+              "VALIDATOR_VETO": 447
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 1989,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 431,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 2162
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": -72628,
+            "final_equity_units": 927372,
+            "initial_units": 1000000
+          },
+          "world": "null"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 199020,
+            "settled_trades": 382,
+            "trades_with_true_net_edge_above_threshold": 382,
+            "wins": 221,
+            "z_milli": 2331
+          },
+          "decisions": {
+            "agree": 4812,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4812
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 100,
+            "unarmed_reason": null,
+            "windows_checked": 5
+          },
+          "ledger": {
+            "backtest_rows": 2687,
+            "chain_ok": true,
+            "head": "686bee334db5aa8dd69a342a35d0a2dece4f0717a724753d4e1d9cc3e6cc41e5",
+            "rows": 7345
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3520,
+            "executed": 282,
+            "halts_t": [],
+            "max_drawdown_ppm": 177908,
+            "pauses_t": [],
+            "rejected": {
+              "COST_OUT_OF_MODEL": 1575,
+              "EDGE_NOT_ABOVE_THRESHOLD": 746,
+              "MISSING_CONFIDENCE": 24,
+              "MISSING_COST": 35,
+              "RISK_POSITION_ALREADY_OPEN": 666,
+              "VALIDATOR_VETO": 192
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 0,
+            "estimated_fail_true_pass": 1160,
+            "estimated_pass_true_fail": 0,
+            "estimated_pass_true_pass": 1418,
+            "incomplete": 2234
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 769196,
+            "final_equity_units": 1769196,
+            "initial_units": 1000000
+          },
+          "world": "planted_edge"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 188111,
+            "settled_trades": 256,
+            "trades_with_true_net_edge_above_threshold": 136,
+            "wins": 198,
+            "z_milli": 1491
+          },
+          "decisions": {
+            "agree": 4520,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4520
+          },
+          "detector": {
+            "armed": true,
+            "baseline_matches_backtest": true,
+            "baseline_trades": 76,
+            "unarmed_reason": null,
+            "windows_checked": 3
+          },
+          "ledger": {
+            "backtest_rows": 2135,
+            "chain_ok": true,
+            "head": "5844acb95120c240816c088eb0f4d652af49cd9cf63cc0dae27c1498ab3eafb5",
+            "rows": 7312
+          },
+          "limit_violations": 0,
+          "regime": {
+            "change_t": 2400,
+            "delay_steps": null,
+            "halt_t": 4066,
+            "pause_t": null,
+            "post_change_trades_settled_until_pause": null,
+            "within_declared_K": false
+          },
+          "replay": {
+            "candidates": 3494,
+            "executed": 180,
+            "halts_t": [
+              4066
+            ],
+            "max_drawdown_ppm": 239082,
+            "pauses_t": [],
+            "rejected": {
+              "BREAKER_HALTED": 623,
+              "COST_OUT_OF_MODEL": 1625,
+              "EDGE_NOT_ABOVE_THRESHOLD": 56,
+              "MISSING_CONFIDENCE": 32,
+              "MISSING_COST": 28,
+              "RISK_PORTFOLIO_EXPOSURE": 4,
+              "RISK_POSITION_ALREADY_OPEN": 825,
+              "VALIDATOR_VETO": 121
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 64,
+            "estimated_fail_true_pass": 53,
+            "estimated_pass_true_fail": 1356,
+            "estimated_pass_true_pass": 889,
+            "incomplete": 2158
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 1057730,
+            "final_equity_units": 2057730,
+            "initial_units": 1000000
+          },
+          "world": "regime_change"
+        },
+        {
+          "calibration": {
+            "expected_wins_milli": 0,
+            "settled_trades": 0,
+            "trades_with_true_net_edge_above_threshold": 0,
+            "wins": 0,
+            "z_milli": null
+          },
+          "decisions": {
+            "agree": 4680,
+            "max_size_deviation_units": 0,
+            "other_mismatches": 0,
+            "total": 4680
+          },
+          "detector": {
+            "armed": false,
+            "baseline_matches_backtest": false,
+            "baseline_trades": 0,
+            "unarmed_reason": "BASELINE_TOO_SMALL",
+            "windows_checked": 0
+          },
+          "ledger": {
+            "backtest_rows": 2169,
+            "chain_ok": true,
+            "head": "af574b864f44a5945cda6f27c3a3f1a7bd5452d1fdae8b72945abfc1eb954263",
+            "rows": 7594
+          },
+          "limit_violations": 0,
+          "regime": null,
+          "replay": {
+            "candidates": 3638,
+            "executed": 0,
+            "halts_t": [],
+            "max_drawdown_ppm": 0,
+            "pauses_t": [],
+            "rejected": {
+              "COST_OUT_OF_MODEL": 1608,
+              "EDGE_NOT_ABOVE_THRESHOLD": 1745,
+              "MISSING_CONFIDENCE": 47,
+              "MISSING_COST": 39,
+              "VALIDATOR_VETO": 199
+            }
+          },
+          "signal_vs_truth": {
+            "estimated_fail_true_fail": 2479,
+            "estimated_fail_true_pass": 0,
+            "estimated_pass_true_fail": 0,
+            "estimated_pass_true_pass": 0,
+            "incomplete": 2201
+          },
+          "simulated_result": {
+            "caption": "synthetic world with planted edge; not a performance",
+            "delta_units": 0,
+            "final_equity_units": 1000000,
+            "initial_units": 1000000
+          },
+          "world": "high_cost"
+        }
+      ]
+    }
+  },
+  "title": "Measurements of the proof pack v2.0 - paper trading on synthetic data",
+  "who_ran_it": "the author of the pack (dev, holdout, stress and rehearsal are NOT blind runs)"
+}
