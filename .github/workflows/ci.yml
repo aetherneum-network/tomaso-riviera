@@ -1,7 +1,7 @@
 # Offline CI: no dependency is installed, no secret is read, no service is contacted by the pack.
 # The test process disables sockets; a test fails if any module imports a network library.
-# This workflow has never run: nothing in this repository has been pushed.
-# [TO CONFIRM] before the first push: pin both actions to a full commit SHA and record the runner image digest.
+# Published on 2026-10-02 as pull request #2 of this repository; the workflow runs on GitHub-hosted runners and its results are on the pull request.
+# [TO CONFIRM]: pin both actions to a full commit SHA and record the runner image digest (not done at the publication).
 name: proof-pack
 
 on:

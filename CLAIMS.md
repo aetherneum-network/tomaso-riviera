@@ -83,5 +83,6 @@ and date: `eval/results.json`, summarised in `README.md`.
     exposure limit lifted in a test.
 13. **The throttle sits low.** In the generated worlds the size multiplier spends most of its time at levels 3
     and 4: re-expansion is slow by design and rarely observed over a whole run.
-14. **CI has never run.** The workflow file exists; nothing was pushed. Action versions and the image digest
+14. **CI results are not recorded here.** Published on 2026-10-02 as pull request #2; the workflow runs on
+    GitHub-hosted runners and its results are on the pull request. Action versions and the image digest
     are `[TO CONFIRM]`.

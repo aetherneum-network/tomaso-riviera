@@ -179,10 +179,19 @@ probabilities of the settled trades: it measures calibration against known proba
 - **Two independent rebuilds** (two processes, two folders, different hash seeds) are byte-identical: 56
   files, bundle SHA-256 `e8d2007188304fde278baaf4df4c039b265df2009140ac866feeeab27ef5f140` (30 September 2026,
   seed 20260930). Rules digest `ae3a3391353afdad6b93acfecb3d379c1298a6fdcf5b7f8b78d2de41188aa4b0`.
-- **Blind run:** PENDING. The code is frozen at the tag `v2.0.0-freeze`; a different hand runs
-  `eval/BLIND_PROTOCOL.md` once, on a seed and a fifth world the author has never seen, with twenty
-  hand-written boundary candidates. The author's rehearsal of that command (seed 20260929, declared, not
-  blind) is in `eval/results.json`.
+- **Blind run:** done once, on 30 September 2026, by a different hand: the evaluator (Claude Opus 5.5), not
+  the builder, on the tag `v2.0.0-freeze` (commit f4a89c5, fresh clone), seed 20261011, with a fifth world
+  and 30 hand-written boundary candidates of the evaluator's own (`eval/BLIND_PROTOCOL.md`; recorded in
+  `eval/history.json`, entry `blind_run`, run at 2026-09-30T17:00:46Z; result file `eval/blind/result.json`).
+  Printed by the run: limit violations 0 (the never-event); decisions agreeing with the reference
+  24931/24931; largest size deviation 0 units; ledger chains intact (51894 rows); executed of candidates per
+  world: null 243/3856, planted_edge 295/3667, regime_change 102/3718 (paused at step 3118), high_cost
+  11/3616, fifth 220/3896 (halted at step 4702); hand-written candidates 30/30 as the hand expected;
+  SCORE OK. The run records no count of abstentions. A first attempt (16:58:24Z) was refused at load,
+  before any measurement, because the hand's file repeated a candidate identifier. The entry `blind` of
+  the history keeps the status PENDING it had before the run (it is not edited; the run is recorded next
+  to it). The author's rehearsal of that command (seed 20260929, declared, not blind) is in
+  `eval/results.json`.
 
 The simulated economic result of a world is not a metric. It is printed only by the report of a run, per
 world, under the caption "synthetic world with planted edge; not a performance", and it is not reproduced
@@ -196,7 +205,11 @@ here. The world with no edge is always in the table.
 - That the divergence rule catches small shifts (it does not: see the stress suite and `CLAIMS.md`).
 - That a consent record was written by a human: the check is on the record, not on the hand.
 - Independence of authorship: the harness and its references share no code, but one author wrote both.
-- CI: the workflow file exists and has never run, because nothing has been pushed.
+- More than one blind run, or a blind run by a human hand: the only one was made once, by the evaluator.
+  Its own flaws are recorded and left as they are: candidate EV-29 tests "after the outcome" and not
+  "after the stop", and the refusal of the first attempt did not start with "REFUSED:" as the protocol says.
+- CI results: published on 2026-10-02 as pull request #2, the workflow runs on GitHub-hosted runners and its
+  results are on the pull request, not in this section.
 
 **Statements above that this pack does not support** (left as they were; details and proposed wording in
 `CLAIMS.md`): "live divergence", "live-vs-backtest" and "the live edge" (nothing is live: the stream is a

@@ -2,6 +2,28 @@
 
 Nothing is deleted or rewritten in this history: a wrong step is followed by a step that corrects it.
 
+## 2.0.1 - documentation after the blind run (2 October 2026)
+
+Documentation only: `README.md` (the "Blind run" line of the proof-pack section and two lines of "What is
+NOT demonstrated"), `CLAIMS.md` (known limit 14), a comment of `.github/workflows/ci.yml`, this file and
+`MANIFEST.sha256`. No code, rule, scenario, test or tool changed: the paths of the freeze are identical to
+the tag `v2.0.0-freeze`. `eval/history.json` and
+`eval/blind/result.json` are unchanged.
+
+- The README said that the blind run was pending. It was run once, on 30 September 2026, by the evaluator
+  (Claude Opus 5.5), not the builder, on `v2.0.0-freeze`, seed 20261011, and recorded as the entry
+  `blind_run` of `eval/history.json` next to the entry `blind`, which keeps its status as written before the
+  run. The README now states what that entry records, and what the run does not show.
+- This is the step that `eval/BLIND_PROTOCOL.md` describes after the run: a new README line, a new
+  manifest, a new tag. The protocol calls that release `v2.0.0`; here it is tagged `v2.0.1-freeze`, after
+  `v2.0.0-freeze`. The name is [TO CONFIRM].
+- Published on 2026-10-02 as pull request #2 of this repository; the workflow runs on GitHub-hosted runners
+  and its results are on the pull request. The statements written before that, that the workflow had never
+  run because nothing was pushed (`README.md`, `CLAIMS.md` known limit 14, the comment of the workflow
+  file), now say so; no result is copied here. The line "CI has never run: nothing is pushed." of entry
+  2.0.0 described that version and stays as written: entries are not rewritten, and a test under `tests/`,
+  a frozen path, checks it.
+
 ## 2.0.0 - proof pack (30 September 2026)
 
 First proof pack: a paper-trading harness on four synthetic worlds with known probabilities, ten scenarios,
