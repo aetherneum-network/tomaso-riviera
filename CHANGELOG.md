@@ -2,6 +2,22 @@
 
 Nothing is deleted or rewritten in this history: a wrong step is followed by a step that corrects it.
 
+## Unreleased - main after pull requests #1 and #2 (2 October 2026, no tag)
+
+Pull request #1 (week-1 review of 30 September 2026, merge commit `4be79b0`) corrected the thesis title in
+two places of the profile text of `README.md`. Pull request #2 (merge commit `89ae5c4`) brought in the pack,
+whose `MANIFEST.sha256` and `ORIGINAL_README_SHA256` in `tests/test_docs.py` had been computed on the README
+before that review. On `main` two tests failed (run 37033183042, 2 October 2026, both systems):
+`AfterTheFreeze.test_the_tree_matches_the_manifest_when_there_is_one` (`README.md` differing) and
+`TheProfileIsLeftAsItWas.test_the_original_text_is_byte_for_byte_the_one_before_this_pack`.
+
+- `tests/test_docs.py`: `ORIGINAL_README_SHA256` is the SHA-256 of the reviewed profile text, with a comment
+  that names pull request #1 as the source of the change. The pack did not change the text; no other test
+  changed.
+- `MANIFEST.sha256`: written by `tools/manifest.py --write --commit` in the next commit, for the commit before it.
+- Code, rules, corpus, scenarios, records and the README text are unchanged; the tags `v2.0.0-freeze` and
+  `v2.0.1-freeze` stay where they are.
+
 ## 2.0.1 - documentation after the blind run (2 October 2026)
 
 Documentation only: `README.md` (the "Blind run" line of the proof-pack section and two lines of "What is

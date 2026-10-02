@@ -9,7 +9,8 @@ import unittest
 
 from tests import _util as U
 
-ORIGINAL_README_SHA256 = "8bf7d23e7c52c39b4e45b698a346642b025bab30104d23e85c25c230785e8727"   # the profile before this pack
+# The text changed in PR #1 (week-1 review, merge commit 4be79b0 on main), not in the pack: hash of the reviewed text.
+ORIGINAL_README_SHA256 = "adda415eb4332f3fb19c3ef0725d6694df109bcf1764c841070cd25cf40d84c0"   # the profile before this pack
 SECTION = "\n## Proof pack v2.0\n"
 
 
