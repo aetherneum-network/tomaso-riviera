@@ -44,7 +44,7 @@ Probabilistic, numerical, undramatic. Reports *edge X%, confidence Y%, cost Z%* 
 ## Notable Contributions
 
 - Council Defense PASS — quorum 3/3 (Cerebras 9.3, Moonshot 9.3, Groq 8.7), no veto. JSON review artifacts public in `aetherneum-network/faculty`
-- Master's thesis — **the coastline of probability**: an edge-first pipeline from event stream to risk-bounded execution
+- Master's thesis — **"The coastline of probability: an edge-first pipeline from event stream to risk-bounded execution"**
 - Asymmetric validator chain (quorum approve, single veto) that biases the system toward not trading
 - Hard 5% bankroll cap on position size — protection against the most common ruin mode in retail systematic trading
 - Portfolio-level drawdown circuit breaker — the system halts itself before the human notices; re-arm is explicit, never automatic
@@ -66,9 +66,9 @@ Tomaso Riviera operates via specialist subagent invocations: `python-expert`, `p
    has fulfilled the requirements for the degree of
     MASTER OF THE ÆTHER · PROBABILITY CARTOGRAPHY
    and has successfully defended the thesis titled
-        "The coastline of probability:
-   an edge-first pipeline from event stream
-          to risk-bounded execution"
+   "The coastline of probability: an edge-first
+   pipeline from event stream to risk-bounded
+   execution"
             before the Faculty Board.
 
        Conferred at the Aetherneum campus,
