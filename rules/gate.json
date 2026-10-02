@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "note": "Execute condition: edge - cost > threshold, strictly. Ordered list: first match wins, refusals on top, default REJECTED.",
+  "threshold_ppm": 20000,
+  "comparison": "strictly_greater",
+  "decision_rules": [
+    {"id": "G01", "when": [["missing", "not_null"]], "decision": "REJECTED", "reason": "@missing"},
+    {"id": "G02", "when": [["halted", "==", true]], "decision": "REJECTED", "reason": "BREAKER_HALTED"},
+    {"id": "G03", "when": [["paused", "==", true]], "decision": "REJECTED", "reason": "SIGNAL_PAUSED"},
+    {"id": "G04", "when": [["veto_count", ">", 0]], "decision": "REJECTED", "reason": "VALIDATOR_VETO"},
+    {"id": "G05", "when": [["quorum_met", "==", false]], "decision": "REJECTED", "reason": "NO_QUORUM"},
+    {"id": "G06", "when": [["net_edge_minus_threshold_ppm", "<=", 0]], "decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD"},
+    {"id": "G07", "when": [["stake_units", "<", 1]], "decision": "REJECTED", "reason": "SIZE_BELOW_MINIMUM"},
+    {"id": "G08", "when": [["risk_veto", "not_null"]], "decision": "REJECTED", "reason": "@risk_veto"},
+    {"id": "G90", "when": [["missing", "is_null"], ["halted", "==", false], ["paused", "==", false], ["veto_count", "==", 0], ["quorum_met", "==", true], ["net_edge_minus_threshold_ppm", ">", 0], ["stake_units", ">=", 1], ["risk_veto", "is_null"]], "decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD"},
+    {"id": "G99", "when": [], "decision": "REJECTED", "reason": "NO_RULE_MATCHED"}
+  ]
+}

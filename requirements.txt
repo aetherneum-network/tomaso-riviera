@@ -1,0 +1,2 @@
+# Standard library only (Python 3.12). This file is intentionally empty of packages:
+# nothing is installed to run the harness, the scenarios, the tests or the evaluation.

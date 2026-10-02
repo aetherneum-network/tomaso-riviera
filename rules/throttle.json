@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "note": "After each losing settlement the level goes up by one (size x shrink). It comes down by one only when BOTH hold: cooldown_steps elapsed since the last change, and net edge above the higher bar.",
+  "shrink": "3/4",
+  "max_level": 4,
+  "cooldown_steps": 20,
+  "reexpansion_edge_bar_ppm": 40000
+}

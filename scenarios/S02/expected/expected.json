@@ -1,0 +1,24 @@
+{
+  "how_derived": "On paper. p_hat = prior + floor(confidence x (signal - prior) / 1000000); net edge = p_hat - price - cost; the threshold is 20000 ppm and the condition is strictly greater. Price and prior are 400000, confidence 500000, default cost 10000.",
+  "net_edge_ppm": {
+    "S02-C1": 20000,
+    "S02-C2": 20001,
+    "S02-C3": -5000,
+    "S02-C4": 19999,
+    "S02-C5": 20000
+  },
+  "decisions": {
+    "S02-C1": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD", "why": "signal 460000: p_hat 430000, net 430000 - 400000 - 10000 = 20000, equal to the threshold"},
+    "S02-C2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 8475, "payout_if_win_units": 20670, "throttle_level": 0,
+               "why": "signal 460002: p_hat 430001, net 20001; Kelly = 20001/590000; a quarter = 20001/2360000; x 1000000 = 8475 exactly; payout floor(8475000000/410000) = 20670"},
+    "S02-C3": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD", "why": "signal 500000: p_hat 450000; cost 30000 + 25000 = 55000; net -5000: the cost is larger than the edge"},
+    "S02-C4": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD", "why": "signal 459998: p_hat 429999, net 19999"},
+    "S02-C5": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD", "why": "signal 460001: 0.5 x 60001 = 30000.5, floored to 30000; p_hat 430000, net 20000: rounding never helps the trade"}
+  },
+  "ledger_rows": 16,
+  "ledger_rows_why": "1 genesis + 5 candidates + 5 decisions + 5 settlements",
+  "forged": {
+    "at_threshold": "EDGE_NOT_ABOVE_THRESHOLD",
+    "lying_about_the_edge": "DECOMPOSITION_MISMATCH"
+  }
+}

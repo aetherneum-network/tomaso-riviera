@@ -1,0 +1,12 @@
+{
+  "id": "S06",
+  "title": "After losses the size shrinks and re-expands slowly, never to recover",
+  "claim": "A5",
+  "run": [
+    "python",
+    "check.py"
+  ],
+  "timeout_s": 60,
+  "expect_exit": 0,
+  "data": "synthetic, hand-written or generated from a seed; paper trading only"
+}

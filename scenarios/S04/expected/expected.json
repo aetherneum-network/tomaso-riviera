@@ -1,0 +1,26 @@
+{
+  "how_derived": "On paper. For a binary contract bought at effective price q: Kelly f* = (p - q)/(1 - q); used = min(f*/4, 5%); stake = floor(used x equity). Equity is 1000000 for every candidate (open positions do not change it). q = 410000 everywhere.",
+  "decisions": {
+    "S04-A1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "throttle_level": 0,
+               "why": "p = 500000: f* = 90000/590000 = 9/59; a quarter = 9/236 = 3.81% < 5%; floor(1000000 x 9/236) = 38135. Conviction label: low"},
+    "S04-A2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "throttle_level": 0,
+               "why": "same figures as A1. Conviction label: extreme"},
+    "S04-B1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "p = 800000: f* = 390000/590000; a quarter = 16.5% > 5%: the cap binds, 50000. Conviction label: low"},
+    "S04-B2": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "same figures as B1. Conviction label: extreme"},
+    "S04-C1": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "throttle_level": 0,
+               "why": "confidence 1.0 on a signal of 500000 gives the same estimate as A1 (500000): same size. Confidence enters the estimate, never the size directly"},
+    "S04-D1": {"decision": "REJECTED", "reason": "EDGE_NOT_ABOVE_THRESHOLD",
+               "why": "signal 440000 at confidence 0.5: p_hat 420000, net edge 10000. 'Extreme' conviction does not make it a trade"}
+  },
+  "pairs_differing_only_in_conviction": [["S04-A1", "S04-A2"], ["S04-B1", "S04-B2"]],
+  "pairs_same_estimate_different_confidence": [["S04-A1", "S04-C1"]],
+  "sizing_parameters": ["p_hat_ppm", "q_eff_ppm", "equity_units", "throttle_multiplier", "cfg"],
+  "ledger_rows": 19,
+  "ledger_rows_why": "1 genesis + 6 candidates + 6 decisions + 6 settlements",
+  "forged": {
+    "one_unit_over_the_cap": "SIZE_OVER_LIMIT",
+    "cap_instead_of_quarter_kelly": "SIZE_OVER_LIMIT"
+  }
+}

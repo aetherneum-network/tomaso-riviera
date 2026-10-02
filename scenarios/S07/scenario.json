@@ -1,0 +1,12 @@
+{
+  "id": "S07",
+  "title": "The ledger is append-only: a candidate inserted after the outcome is detected",
+  "claim": "A6",
+  "run": [
+    "python",
+    "check.py"
+  ],
+  "timeout_s": 60,
+  "expect_exit": 0,
+  "data": "synthetic, hand-written or generated from a seed; paper trading only"
+}

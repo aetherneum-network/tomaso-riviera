@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "note": "Position size = min(kelly_multiplier x Kelly, cap) x throttle x equity, floored to units. One open position per market: the cap cannot be stacked by repeating a signal.",
+  "kelly_multiplier": "1/4",
+  "cap_ppm": 50000,
+  "max_open_positions_per_market": 1,
+  "max_portfolio_exposure_ppm": 300000,
+  "drawdown_warn_ppm": 100000,
+  "exposure_when_warned_ppm": 150000,
+  "drawdown_halt_ppm": 200000,
+  "initial_bankroll_units": 1000000,
+  "divergence": {"n_sigma": 4, "window_trades": 50, "min_baseline_trades": 50}
+}

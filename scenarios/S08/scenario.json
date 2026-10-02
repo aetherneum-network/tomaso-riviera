@@ -1,0 +1,12 @@
+{
+  "id": "S08",
+  "title": "The replay is paused when it diverges from the backtested baseline by more than N sigma",
+  "claim": "A7",
+  "run": [
+    "python",
+    "check.py"
+  ],
+  "timeout_s": 180,
+  "expect_exit": 0,
+  "data": "synthetic, hand-written or generated from a seed; paper trading only"
+}

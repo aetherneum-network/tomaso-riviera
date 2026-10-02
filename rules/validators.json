@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "note": "Per validator, the first matching rule gives its vote. Vetoes on top: one veto is enough. No validator can approve alone: a quorum of approvals is required.",
+  "quorum": {"min_approvals": 3, "validators": ["price_feed", "cross_market", "calendar", "confirmation"]},
+  "rules": [
+    {"id": "V01", "validator": "price_feed", "when": [["price_age_steps", "is_null"]], "vote": "VETO", "note": "quote without as_of"},
+    {"id": "V02", "validator": "price_feed", "when": [["price_age_steps", ">", 3]], "vote": "VETO", "note": "stale quote"},
+    {"id": "V03", "validator": "price_feed", "when": [["price_age_steps", "<", 0]], "vote": "VETO", "note": "quote dated after the candidate"},
+    {"id": "V04", "validator": "cross_market", "when": [["book_gap_ppm", ">", 50000]], "vote": "VETO", "note": "the two sides do not add up"},
+    {"id": "V05", "validator": "calendar", "when": [["steps_to_resolution", "is_null"]], "vote": "VETO", "note": "unknown resolution time"},
+    {"id": "V06", "validator": "calendar", "when": [["steps_to_resolution", "<=", 2]], "vote": "VETO", "note": "blackout before resolution"},
+    {"id": "V07", "validator": "confirmation", "when": [["confirm_delta_ppm", "<=", -60000]], "vote": "VETO", "note": "second indicator contradicts the signal"},
+    {"id": "V10", "validator": "price_feed", "when": [], "vote": "APPROVE"},
+    {"id": "V11", "validator": "cross_market", "when": [["book_gap_ppm", "is_null"]], "vote": "ABSTAIN"},
+    {"id": "V12", "validator": "cross_market", "when": [], "vote": "APPROVE"},
+    {"id": "V13", "validator": "calendar", "when": [], "vote": "APPROVE"},
+    {"id": "V14", "validator": "confirmation", "when": [["confirm_delta_ppm", "is_null"]], "vote": "ABSTAIN"},
+    {"id": "V15", "validator": "confirmation", "when": [["confirm_delta_ppm", ">=", 10000]], "vote": "APPROVE"},
+    {"id": "V16", "validator": "confirmation", "when": [], "vote": "ABSTAIN"}
+  ]
+}

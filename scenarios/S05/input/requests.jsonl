@@ -1,0 +1,5 @@
+{"kind":"REARM_REQUEST","t":31}
+{"consent_file":"consent_agent.json","kind":"REARM_REQUEST","t":32}
+{"consent_file":"consent_wrong_halt.json","kind":"REARM_REQUEST","t":33}
+{"consent_file":"consent_missing.json","kind":"REARM_REQUEST","t":34}
+{"consent_file":"consent_valid.json","kind":"REARM_REQUEST","t":36}

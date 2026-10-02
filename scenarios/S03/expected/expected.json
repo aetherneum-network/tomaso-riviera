@@ -1,0 +1,33 @@
+{
+  "how_derived": "On paper, from rules/validators.json (first matching rule per validator; quorum of 3 approvals among price_feed, cross_market, calendar, confirmation; one veto refuses). Every candidate is a strong one: estimate 0.80 at price 0.40, net edge 390000, so nothing but the validators can refuse it.",
+  "votes": {
+    "S03-C1": {"price_feed": "APPROVE", "cross_market": "VETO", "calendar": "APPROVE", "confirmation": "APPROVE"},
+    "S03-C2": {"price_feed": "APPROVE", "cross_market": "ABSTAIN", "calendar": "APPROVE", "confirmation": "ABSTAIN"},
+    "S03-C3": {"price_feed": "VETO", "cross_market": "APPROVE", "calendar": "APPROVE", "confirmation": "APPROVE"},
+    "S03-C4": {"price_feed": "APPROVE", "cross_market": "APPROVE", "calendar": "APPROVE", "confirmation": "ABSTAIN"},
+    "S03-C5": {"price_feed": "APPROVE", "cross_market": "APPROVE", "calendar": "APPROVE", "confirmation": "APPROVE"},
+    "S03-C6": {"price_feed": "APPROVE", "cross_market": "APPROVE", "calendar": "VETO", "confirmation": "APPROVE"},
+    "S03-C7": {"price_feed": "VETO", "cross_market": "APPROVE", "calendar": "APPROVE", "confirmation": "APPROVE"},
+    "S03-C8": {"price_feed": "APPROVE", "cross_market": "APPROVE", "calendar": "APPROVE", "confirmation": "APPROVE"}
+  },
+  "decisions": {
+    "S03-C1": {"decision": "REJECTED", "reason": "VALIDATOR_VETO", "why": "the two sides add up to 1070000: gap 70000 > 50000; three approvals do not outvote one veto"},
+    "S03-C2": {"decision": "REJECTED", "reason": "NO_QUORUM", "why": "no complement price and no confirmation: two abstentions, two approvals, quorum is three"},
+    "S03-C3": {"decision": "REJECTED", "reason": "VALIDATOR_VETO", "why": "quote of t=7 used at t=12: 5 steps old, the limit is 3"},
+    "S03-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "three approvals and one abstention; Kelly = 390000/590000, a quarter is 16.5%, the 5% cap binds: 50000; payout floor(50000000000/410000) = 121951"},
+    "S03-C5": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "quote exactly 3 steps old: not stale (the rule is 'more than 3')"},
+    "S03-C6": {"decision": "REJECTED", "reason": "VALIDATOR_VETO", "why": "the market resolves at t=17, the candidate is at t=15: 2 steps, inside the blackout"},
+    "S03-C7": {"decision": "REJECTED", "reason": "VALIDATOR_VETO", "why": "quote dated t=17 on a candidate at t=16: a price from the future"},
+    "S03-C8": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 50000, "payout_if_win_units": 121951, "throttle_level": 0,
+               "why": "gap exactly 50000: not a veto (the rule is 'more than 50000')"}
+  },
+  "ledger_rows": 23,
+  "ledger_rows_why": "1 genesis + 8 candidates + 8 decisions + 6 settlements",
+  "forged": {
+    "with_a_veto": "EXECUTION_WITH_VETO",
+    "below_quorum": "EXECUTION_WITHOUT_QUORUM"
+  },
+  "known_limit": "The ledger guard reads the ballot recorded in the row. A row whose ballot itself is forged passes the guard; the independent audit, which re-derives every vote from the candidate, flags it. The checker shows both."
+}

@@ -1,0 +1,16 @@
+{
+  "how_derived": "On paper, from input/candidates.jsonl and the rule files; not copied from an output. Rule G01 of rules/gate.json comes first: a candidate with a missing figure is refused before anything else is looked at.",
+  "decisions": {
+    "S01-C1": {"decision": "REJECTED", "reason": "MISSING_CONFIDENCE", "why": "confidence_ppm is null"},
+    "S01-C2": {"decision": "REJECTED", "reason": "MISSING_COST", "why": "cost is null"},
+    "S01-C3": {"decision": "REJECTED", "reason": "COST_OUT_OF_MODEL", "why": "latency of 9 steps, the cost model stops at 6"},
+    "S01-C4": {"decision": "EXECUTED", "reason": "EDGE_ABOVE_THRESHOLD", "stake_units": 38135, "payout_if_win_units": 93012, "throttle_level": 0,
+               "why": "control: p_hat = 400000 + 0.5 x (600000 - 400000) = 500000; cost 10000; q_eff 410000; net edge 90000 > 20000; Kelly = 90000/590000 = 9/59; a quarter = 9/236; floor(9/236 x 1000000) = 38135; payout floor(38135 x 1000000 / 410000) = 93012"},
+    "S01-C5": {"decision": "REJECTED", "reason": "MISSING_COST", "why": "the cost has no slippage_ppm"},
+    "S01-C6": {"decision": "REJECTED", "reason": "MISSING_CONFIDENCE", "why": "confidence is the word 'high', not a number"}
+  },
+  "positions_opened": ["S01-C4"],
+  "ledger_rows": 17,
+  "ledger_rows_why": "1 genesis + 6 candidates + 6 decisions + 4 settlements",
+  "forged_execution_refused_with": "EXECUTION_OF_INCOMPLETE_CANDIDATE"
+}

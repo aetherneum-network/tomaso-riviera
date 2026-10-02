@@ -1,0 +1,9 @@
+{
+  "acknowledged_drawdown_ppm": 200000,
+  "halt_hash": "<hash of the HALT row, filled by check.py>",
+  "kind": "HUMAN_REARM_CONSENT",
+  "operator": "Fixture Operator (test record)",
+  "operator_is_human": true,
+  "signed_at_t": 36,
+  "statement": "I have read the halt and I re-arm the breaker."
+}
